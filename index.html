@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:Poppins,sans-serif;
+  background:linear-gradient(135deg,#fadadd,#fff5f7);
+  overflow:hidden;
+}
+
+/* ---------- COMMON ---------- */
+.page{
+  position:absolute;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+
+.float{
+  position:absolute;
+  font-size:22px;
+  pointer-events:none;
+  animation:floatUp linear infinite;
+}
+
+@keyframes floatUp{
+  from{transform:translateY(100vh);opacity:1;}
+  to{transform:translateY(-120vh);opacity:0;}
+}
+
+/* ---------- FIREWORK ---------- */
+.firework{
+  position:absolute;
+  font-size:18px;
+  animation:explode 2.5s forwards;
+}
+
+@keyframes explode{
+  to{
+    transform:translate(var(--x),var(--y)) scale(1.6);
+    opacity:0;
+  }
+}
+
+/* ---------- PAGE 1 ---------- */
+.card{
+  background:white;
+  width:90%;
+  max-width:360px;
+  padding:30px;
+  border-radius:25px;
+  text-align:center;
+  box-shadow:0 15px 30px rgba(0,0,0,.15);
+}
+
+h1{
+  font-family:'Dancing Script',cursive;
+  color:#ff4d6d;
+  font-size:36px;
+}
+
+#giftBtn{
+  font-size:80px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+  50%{transform:translateY(-10px);}
+}
+
+#surprise{display:none;}
+#surprise img{
+  width:100%;
+  border-radius:15px;
+  margin-top:15px;
+}
+
+/* ---------- PAGE 2 ---------- */
+#page2{display:none;}
+#nextHeart{
+  font-size:70px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  animation:pulse 1.5s infinite;
+}
+#nextHeart span{display:block;font-size:18px;}
+
+@keyframes pulse{
+  50%{transform:scale(1.3);}
+}
+
+/* ---------- PAGE 3 ---------- */
+#page3{display:none;}
+
+.cloud{
+  position:absolute;
+  background:white;
+  padding:14px 22px;
+  border-radius:50px;
+  font-family:'Dancing Script',cursive;
+  font-size:22px;
+  box-shadow:0 10px 20px rgba(0,0,0,.1);
+  animation:cloudFloat 6s ease-in-out infinite;
+}
+
+@keyframes cloudFloat{
+  50%{transform:translateY(-8px);}
+}
+
+.giftRow{
+  display:flex;
+  gap:30px;
+  margin-top:120px;
+}
+
+.gift{
+  font-size:70px;
+  cursor:pointer;
+  animation:shake 2.5s infinite;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+@keyframes shake{
+  25%{transform:rotate(3deg);}
+  50%{transform:rotate(-3deg);}
+}
+
+.gift img{display:none;}
+
+#gallery{
+  margin-top:30px;
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+#gallery img{
+  width:150px;
+  max-width:40vw;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,.2);
+  animation:pop .5s ease;
+}
+
+@keyframes pop{
+  from{transform:scale(.6);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}
+
+#page3Next{
+  position:absolute;
+  bottom:20px;
+  right:20px;
+  padding:14px 24px;
+  border:none;
+  border-radius:30px;
+  background:#ff4d6d;
+  color:white;
+  font-size:18px;
+  cursor:pointer;
+}
+
+/* ---------- PAGE 4 ---------- */
+#page4{display:none;}
+
+.letter{
+  background:white;
+  width:90%;
+  max-width:420px;
+  padding:35px;
+  border-radius:25px;
+  box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
+.letter h2{
+  font-family:'Dancing Script',cursive;
+  font-size:36px;
+  color:#ff4d6d;
+  text-align:center;
+}
+
+#typedText{
+  margin-top:20px;
+  line-height:1.7;
+}
+
+#replyBtn{
+  margin-top:20px;
+  padding:12px 22px;
+  border:none;
+  border-radius:25px;
+  background:#ff4d6d;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page" id="page1">
+  <div class="card">
+    <h1>Happy Valentine’s Day 💕</h1>
+    <p>Tap the gift 🎁</p>
+    <button id="giftBtn">🎁</button>
+    <div id="surprise">
+      <img src="2.jpeg">
+      <p>You are my favorite person 💖</p>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+  <button id="nextHeart">❤️<span>Next</span></button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+
+  <div class="cloud">You are my best one💕</div>
+  <div class="cloud">You are my dream 🤞</div>
+  <div class="cloud">My forever choice 💖</div>
+  <div class="cloud">My happiest thought 🌸</div>
+
+  <div class="giftRow">
+    <div class="gift" onclick="openGift(this)">🎁<img src="temple.jpeg"></div>
+    <div class="gift" onclick="openGift(this)">🎁<img src="A1.jpeg"></div>
+    <div class="gift" onclick="openGift(this)">🎁<img src="a3.jpeg"></div>
+  </div>
+
+  <div id="gallery"></div>
+  <button id="page3Next">❤️ Next</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="page4">
+  <div class="letter">
+    <h2>My Love 💖</h2>
+    <p id="typedText"></p>
+    <button id="replyBtn" onclick="reply()">Reply 💌</button>
+  </div>
+  <audio id="music" src="barbaad.mp3" loop></audio>
+</div>
+
+<script>
+/* FLOATING DECOR */
+function spawn(icon){
+  const e=document.createElement("div");
+  e.className="float";
+  e.innerHTML=icon;
+  e.style.left=Math.random()*100+"vw";
+  e.style.animationDuration=6+Math.random()*6+"s";
+  document.body.appendChild(e);
+  setTimeout(()=>e.remove(),12000);
+}
+setInterval(()=>spawn("💖"),600);
+setInterval(()=>spawn("🦋"),3500);
+setInterval(()=>spawn("🍫"),4500);
+
+/* PAGE 1 */
+giftBtn.onclick=()=>{
+  giftBtn.style.display="none";
+  surprise.style.display="block";
+  setTimeout(()=>{page1.style.display="none";page2.style.display="flex";},2000);
+};
+
+/* PAGE 2 */
+nextHeart.onclick=()=>{
+  page2.style.display="none";
+  page3.style.display="flex";
+  randomizeClouds();
+  fireworks();
+};
+
+/* PAGE 3 */
+function openGift(el){
+  const img=el.querySelector("img");
+  img.style.display="block";
+  gallery.appendChild(img);
+  el.remove();
+}
+
+page3Next.onclick=()=>{
+  page3.style.display="none";
+  page4.style.display="flex";
+  music.play();
+  typeWriter();
+  fireworks();
+};
+
+/* RANDOM CLOUD POSITIONS */
+function randomizeClouds(){
+  document.querySelectorAll(".cloud").forEach(c=>{
+    c.style.left=Math.random()*(innerWidth-220)+"px";
+    c.style.top=Math.random()*(innerHeight-400)+"px";
+  });
+}
+
+/* FIREWORKS */
+function fireworks(){
+  for(let i=0;i<120;i++){
+    const f=document.createElement("div");
+    f.className="firework";
+    f.innerHTML="✨";
+    f.style.left="50%";
+    f.style.top="50%";
+    f.style.setProperty("--x",(Math.random()*1600-800)+"px");
+    f.style.setProperty("--y",(Math.random()*1600-800)+"px");
+    document.body.appendChild(f);
+    setTimeout(()=>f.remove(),2500);
+  }
+}
+
+/* TYPEWRITER */
+const text=`From the moment you came into my life,
+everything felt warmer and brighter.
+
+You are my forever
+You are my cooler
+My support
+my everything 
+I am nothing without you babe...
+Love you so muchhhh !!!!🩵🤍`;
+let i=0;
+function typeWriter(){
+  if(i<text.length){
+    typedText.innerHTML+=text.charAt(i);
+    i++;
+    setTimeout(typeWriter,40);
+  }
+}
+
+/* WHATSAPP REPLY */
+function reply(){
+  window.open(
+    "https://wa.me/919515979600?❤️",
+    "_blank"
+  );
+}
+</script>
+
+</body>
+</html>
